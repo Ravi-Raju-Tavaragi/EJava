@@ -62,6 +62,19 @@ public class StackProblems
             System.out.print(nums[i] + " ");
         }
 
+        System.out.println();
+        System.out.println("Reverse array");
+
+        int nums1[] = {'R', 'A', 'V', 'I'};
+        for(int i = 0; i < nums1.length; i++)
+        {
+            mystack2.push(nums1[i]);
+        }
+        for(int i = 0; i < nums1.length; i++)
+        {
+            nums1[i] = mystack2.pop();
+            System.out.print(nums1[i] + " ");
+        }
         
     }
     
