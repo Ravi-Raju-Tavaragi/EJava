@@ -40,12 +40,11 @@ public class MainQueueArray
         System.out.println();
         System.out.println("Last element in queue : "+queue.last());
 
-        queue.display();
-        queue.display();
-        queue.display();
-        queue.display();
-        queue.display();
-        queue.display();
+        queue.deQueue();
+        queue.deQueue();
+        queue.deQueue();
+        queue.deQueue();
+        queue.deQueue();
 
         System.out.println();
         queue.display();
