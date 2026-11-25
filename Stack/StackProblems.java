@@ -63,19 +63,20 @@ public class StackProblems
         }
 
         System.out.println();
-        System.out.println("Reverse array");
-
-        int nums1[] = {'R', 'A', 'V', 'I'};
-        for(int i = 0; i < nums1.length; i++)
+        mystack.print();
+        int count = 0;
+        int max = nums[0];
+        for(int i = 0; i < nums.length; i++)
         {
-            mystack2.push(nums1[i]);
+            int temp = mystack.pop();
+            if(max < temp)
+            {
+                max = temp;
+            }
+            count++;
         }
-        for(int i = 0; i < nums1.length; i++)
-        {
-            nums1[i] = mystack2.pop();
-            System.out.print(nums1[i] + " ");
-        }
-        
+        System.out.println("Count of Stack Element : "+count);
+        System.out.println("MAX Element : "+max);
     }
     
 }
