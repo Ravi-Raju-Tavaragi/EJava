@@ -64,5 +64,34 @@ public class QueueArray
 
         return queue[front + 1];
     }
+
+    //last()
+    public int last()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        return queue[rear];
+    }
+
+    //display()
+    public void display()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Queue is empty");
+            return;
+        }
+
+        System.out.println("Front");
+        for(int i = front + 1; i <= rear; i++)
+        {
+            System.out.println(queue[i]);
+            System.out.println("-------------");
+        }
+        System.out.println("----------------");
+    }
     
 }
