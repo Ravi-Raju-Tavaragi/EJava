@@ -13,15 +13,26 @@ public class ProblemsOnQueue
         myQueue.enQueue(50);
         myQueue.display();
 
-        int sum = 0;
+       /*int sum = 0;
         for(int i = 0; i < 5; i++)
         {
             sum = sum + myQueue.deQueue();
         }
 
         System.out.println(sum);
-        myQueue.display();
+        myQueue.display();*/
         
+        System.out.println();
+        int evencount = 0;
+
+        for(int i = 0; i < 5; i++)
+        {
+            if(myQueue.deQueue() % 2 == 0)
+            {
+                evencount++;
+            }
+        }
+        System.out.println("Even digit count : "+evencount);
         
     }
     
