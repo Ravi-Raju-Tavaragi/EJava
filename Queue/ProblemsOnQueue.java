@@ -33,6 +33,9 @@ public class ProblemsOnQueue
             }
         }
         System.out.println("Even digit count : "+evencount);
+
+        System.out.println("-----------");
+        myQueue.display();
         
     }
     
