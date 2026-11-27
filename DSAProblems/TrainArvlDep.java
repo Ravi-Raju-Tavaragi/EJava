@@ -20,23 +20,24 @@ public class TrainArvlDep
         int arrivalIndex = 0;
         int departeIndex = 0;
 
+        System.out.println();
         while(arrivalIndex < arrival.length)
         {
             if(arrival[arrivalIndex] <= depart[departeIndex])
             {
                 currentPlatformOccupiedCount++;
                 maxPlatformOccupiedSofar = Math.max(currentPlatformOccupiedCount, maxPlatformOccupiedSofar);
+                System.out.println("One Train Arrived at Time - "+arrival[arrivalIndex]+" - it is in paltform Number - "+currentPlatformOccupiedCount);
                 arrivalIndex++;
             }
             else
             {
                 currentPlatformOccupiedCount--;
+                System.out.println("One Train Departed at Time - "+depart[departeIndex]+" - it is departed from Platform Number - "+currentPlatformOccupiedCount);
                 departeIndex++;
             }
         }
 
-
-        
         return maxPlatformOccupiedSofar;
     }
 
