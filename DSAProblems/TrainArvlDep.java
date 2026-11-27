@@ -43,8 +43,8 @@ public class TrainArvlDep
 
     public static void main(String[] args) 
     {
-        int[] arrival = {1030, 1050, 1035, 1050, 1037};
-        int[] depart = {1045, 1055, 1040, 1110, 1058};
+        int[] arrival = {1030, 1030, 1050, 1035, 1050, 1037};
+        int[] depart = {1045, 1047, 1055, 1040, 1110, 1058};
 
 
         int minPlatformCount = minimumPlatformRequired(arrival, depart);
