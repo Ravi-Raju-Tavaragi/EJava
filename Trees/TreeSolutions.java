@@ -9,11 +9,21 @@ public class TreeSolutions
         System.out.println("Pre order travasal tree printing");
         preOrderPrintTree(root);
 
+        System.out.println();
         System.out.println("\npost order travasal tree printing");
         postOrderPrintTree(root);
 
+        System.out.println();
         System.out.println("\nin order travasal tree printing");
         inOrderPrintTree(root);
+
+        System.out.println();
+        int treeCount = getCountOfNodes(root);
+        System.out.println("Total Nodes in TreeCount = "+treeCount);
+
+        System.out.println();
+        int treeCount1 = getCodeBadCount(root);
+        System.out.println("Total Nodes in TreeCount in Bad Code = "+treeCount1);
         
     }
 
@@ -34,7 +44,7 @@ public class TreeSolutions
         //second generation  2nd level
         //children of first left child of root
         root.left.left = new TreeNode(40);
-        root.right.right = new TreeNode(60);
+        root.left.right = new TreeNode(60);
 
         //children of right right child of root
         root.right.left = new TreeNode(90);
@@ -88,5 +98,25 @@ public class TreeSolutions
 
         System.out.println(root.right.left.data);
         System.out.println(root.right.right.data);*/
+    }
+
+    public static int getCountOfNodes(TreeNode root)
+    {
+        if(root == null)
+            return 0;
+
+        int leftSubTreeCount = getCountOfNodes(root.left);
+        int rightSubTreeCount =  getCountOfNodes(root.right);
+
+        int myOwnCount = 1;
+
+        int totalCount = myOwnCount + leftSubTreeCount + rightSubTreeCount;
+        return totalCount;
+    }
+
+    public static int getCodeBadCount(TreeNode root)
+    {
+        if(root == null) return 0;
+        return getCodeBadCount(root.left) + getCodeBadCount(root.right) + 1;
     }
 }
