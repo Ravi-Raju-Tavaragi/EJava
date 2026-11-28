@@ -149,7 +149,7 @@ public class TreeSolutions
 
         return  isFound;
     }
-
+ 
     public static int maxNode(TreeNode root)
     {
         if(root == null)
