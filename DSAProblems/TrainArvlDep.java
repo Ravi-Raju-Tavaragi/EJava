@@ -6,6 +6,10 @@ public class TrainArvlDep
 {
     public static int minimumPlatformRequired(int[] arrival, int[] depart)
     {
+        
+
+
+
         int maxPlatformOccupiedSofar = 0;
         int currentPlatformOccupiedCount = 0;
 
@@ -32,6 +36,11 @@ public class TrainArvlDep
             }
             else
             {
+                if(currentPlatformOccupiedCount == 0)
+                {
+                    System.out.println("Invalid input ");
+                    return -100;
+                }
                 currentPlatformOccupiedCount--;
                 System.out.println("One Train Departed at Time - "+depart[departeIndex]+" - it is departed from Platform Number - "+currentPlatformOccupiedCount);
                 departeIndex++;
