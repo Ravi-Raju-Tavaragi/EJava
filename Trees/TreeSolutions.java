@@ -24,6 +24,18 @@ public class TreeSolutions
         System.out.println();
         int treeCount1 = getCodeBadCount(root);
         System.out.println("Total Nodes in TreeCount in Bad Code = "+treeCount1);
+
+        System.out.println();
+        System.out.println(findKey(root, 120));
+
+        System.out.println();
+        System.out.println(getSum(root));
+
+        System.out.println();
+        System.out.println(maxNode(root));
+
+        System.out.println();
+        System.out.println(minNode(root));
         
     }
 
@@ -119,4 +131,63 @@ public class TreeSolutions
         if(root == null) return 0;
         return getCodeBadCount(root.left) + getCodeBadCount(root.right) + 1;
     }
+
+    public static boolean findKey(TreeNode root, int key)
+    {
+        if(root == null)
+            return false;
+
+        if(root.data == key)
+        {
+            return true;
+        }
+
+        boolean leftSearch = findKey(root.left, key);
+        boolean rightSearch = findKey(root.right, key);
+        boolean isFound = leftSearch || rightSearch;
+    
+
+        return  isFound;
+    }
+
+    public static int maxNode(TreeNode root)
+    {
+        if(root == null)
+            return Integer.MIN_VALUE;
+
+        int leftMax = maxNode(root.left);
+        int rightMax = maxNode(root.right);
+
+        int max = Math.max(leftMax, rightMax);
+
+        max = Math.max(root.data, max);
+        return max;
+    }
+
+    public static int minNode(TreeNode root)
+    {
+        if(root == null)
+            return Integer.MAX_VALUE;
+
+        int leftMin = minNode(root.left);
+        int rightMin = minNode(root.right);
+
+        int min = Math.min(leftMin, rightMin);
+
+        min = Math.min(root.data, min);
+        return min;
+    }
+
+    public static int getSum(TreeNode root)
+    {
+        if(root == null)
+            return 0;
+
+        int leftSum = getSum(root.left);
+        int rightSum = getSum(root.right);
+
+        int totalSum = root.data + leftSum + rightSum;
+
+        return totalSum;   
+    }   
 }
