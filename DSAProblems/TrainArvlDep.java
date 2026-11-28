@@ -6,10 +6,6 @@ public class TrainArvlDep
 {
     public static int minimumPlatformRequired(int[] arrival, int[] depart)
     {
-        
-
-
-
         int maxPlatformOccupiedSofar = 0;
         int currentPlatformOccupiedCount = 0;
 
